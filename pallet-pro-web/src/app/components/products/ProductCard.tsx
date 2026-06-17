@@ -5,8 +5,8 @@ import Link from 'next/link'
 type BadgeType = 'new' | 'used' | 'custom'
 
 const badgeConfig: Record<BadgeType, { label: string; className: string }> = {
-  new:    { label: 'Новый',     className: 'bg-emerald-50 text-emerald-900' },
-  used:   { label: 'Б/У',       className: 'bg-zinc-100 text-zinc-700' },
+  new: { label: 'Новый', className: 'bg-emerald-50 text-emerald-900' },
+  used: { label: 'Б/У', className: 'bg-zinc-100 text-zinc-700' },
   custom: { label: 'Под заказ', className: 'bg-violet-50 text-violet-900' },
 }
 
@@ -16,6 +16,7 @@ interface ProductCardProps {
   price?: string
   badge?: BadgeType
   image?: string
+  wide?: boolean
 }
 
 export function ProductCard({
@@ -24,22 +25,33 @@ export function ProductCard({
   price = 'Договорная',
   badge = 'new',
   image,
+  wide = false,
 }: ProductCardProps) {
   const b = badgeConfig[badge]
   const isCustom = badge === 'custom'
 
   return (
     <div className="flex flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white transition-colors">
-      <div className="aspect-square bg-zinc-100 flex items-center justify-center">
+      <div
+        className={`bg-zinc-100 flex items-center justify-center ${
+          wide ? 'aspect-[2/1]' : 'aspect-square'
+        }`}
+      >
         {image ? (
-          <img src={image} alt={title} className="h-full w-full object-cover" />
+          <img
+            src={image}
+            alt={title}
+            className="h-full w-full object-cover"
+          />
         ) : (
           <span className="text-4xl text-zinc-300">📦</span>
         )}
       </div>
 
       <div className="flex flex-1 flex-col gap-2.5 p-4">
-        <span className={`w-fit rounded-md px-2 py-0.5 text-xs font-medium ${b.className}`}>
+        <span
+          className={`w-fit rounded-md px-2 py-0.5 text-xs font-medium ${b.className}`}
+        >
           {b.label}
         </span>
 

@@ -1,14 +1,31 @@
-import { ProductCard } from '@/app/components/products/ProductCard'
+﻿import { ProductCard } from './ProductCard'
 
-export function ProductsGrid() {
+interface Product {
+  title: string
+  size: string
+  price: string
+  badge: 'new' | 'used' | 'custom'
+  image?: string
+  wide?: boolean
+}
+
+interface ProductsGridProps {
+  items: Product[]
+}
+
+export function ProductsGrid({ items }: ProductsGridProps) {
   return (
     <div className="container mx-auto px-6 py-10">
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-        <ProductCard badge="new" />
-        <ProductCard badge="used" />
-        <ProductCard badge="custom" size="1200×800" />
-        <ProductCard badge="new" size="800×600" />
-      </div>
+    <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 ">
+      {items.map((item) => (
+        <div
+          key={item.title}
+          className={item.wide ? 'col-span-2' : ''}
+        >
+          <ProductCard {...item} />
+        </div>
+      ))}
+    </div>
     </div>
   )
 }

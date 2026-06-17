@@ -9,6 +9,7 @@ const types = [
     title: "Паллеты б/у",
     desc: "Восстановленные паллеты в рабочем состоянии. Отличный выбор для оптимизации затрат при больших объёмах.",
     features: ["Прошли контроль качества", "Цена от договорной", "Большой выбор размеров"],
+    href: "/used-pallets",
   },
   {
     icon: "📦",
@@ -18,6 +19,7 @@ const types = [
     title: "Новые паллеты",
     desc: "Паллеты первого сорта прямо с производства. Идеальны для пищевой, фармацевтической и экспортной продукции.",
     features: ["Сертифицированная древесина", "Стандарт ISPM 15", "Размер 1200×1000"],
+    href: "/pallets",
   },
   {
     icon: "⚙",
@@ -27,6 +29,7 @@ const types = [
     title: "Паллеты под заказ",
     desc: "Изготовим паллеты по вашим размерам и требованиям. Нестандартные габариты, усиленная конструкция.",
     features: ["Любые размеры и форма", "Срок от 5 рабочих дней", "Расчёт за 1 час"],
+    href: "/ctaunder",
   },
 ];
 
@@ -40,35 +43,36 @@ export default function ProductTypesHome() {
             Наш ассортимент
           </span>
           <h2 className="text-3xl font-medium mb-2">Паллеты для любых задач</h2>
-          <p className="text-sm text-zinc-500">Подберём подходящий вариант под ваш объём и бюджет</p>
+          <p className="text-sm text-zinc-500">Подберём подходящий вариант под ваш объём</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {types.map((t) => (
-            <div key={t.title} className="border border-zinc-200 rounded-2xl p-6 flex flex-col gap-3 hover:border-zinc-400 transition-colors">
-              <span className={`text-xs font-medium px-3 py-1 rounded-md w-fit ${t.badgeClass}`}>
-                {t.badge}
-              </span>
-              <p className="text-lg font-medium">{t.title}</p>
-              <p className="text-sm text-zinc-500 leading-relaxed flex-1">{t.desc}</p>
-              <ul className="flex flex-col gap-1.5">
-                {t.features.map((f) => (
-                  <li key={f} className="flex items-center gap-2 text-sm text-zinc-500">
-                    <span className="text-zinc-300">✓</span> {f}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-
-        <div className="text-center mt-10">
           <Link
-            href="/products"
-            className="inline-flex items-center gap-2 bg-black text-white rounded-xl px-7 py-3 text-sm font-medium hover:opacity-85 transition-opacity"
+            key={t.title}
+            href={t.href}
+            className="border border-zinc-200 rounded-2xl p-6 flex flex-col gap-3 hover:border-zinc-400 transition-colors"
           >
-            Смотреть весь каталог →
+            <span className={`text-xs font-medium px-3 py-1 rounded-md w-fit ${t.badgeClass}`}>
+              {t.badge}
+            </span>
+
+            <p className="text-lg font-medium">{t.title}</p>
+
+            <p className="text-sm text-zinc-500 leading-relaxed flex-1">
+              {t.desc}
+            </p>
+
+            <ul className="flex flex-col gap-1.5">
+              {t.features.map((f) => (
+                <li key={f} className="flex items-center gap-2 text-sm text-zinc-500">
+                  <span className="text-zinc-300">✓</span>
+                  {f}
+                </li>
+              ))}
+            </ul>
           </Link>
+        ))}
         </div>
 
       </div>

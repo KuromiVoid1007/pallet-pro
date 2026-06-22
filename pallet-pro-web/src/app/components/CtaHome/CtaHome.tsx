@@ -1,7 +1,7 @@
 export default function CtaHome() {
   return (
     <section className="px-6 py-16">
-      <div className="mx-auto container bg-black rounded-3xl px-12 py-14 flex items-center justify-between gap-10">
+      <div className="mx-auto container bg-black rounded-3xl px-6 py-10 flex flex-col gap-8 md:flex-row md:items-center md:justify-between md:px-12 md:py-14">
 
         {/* Left */}
         <div className="flex-1">
@@ -25,7 +25,7 @@ export default function CtaHome() {
         </div>
 
         {/* Right — форма */}
-        <div className="flex flex-col gap-3 min-w-[260px]">
+        <div className="flex w-full flex-col gap-3 md:max-w-sm">
           <input
             type="text"
             placeholder="Ваше имя"

@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer className="mt-20 rounded-t-[40px] bg-black px-10 py-12 text-white w-full">
       
-      <div className="mx-auto flex max-w-7xl items-start justify-between">
+      <div className="mx-auto flex flex-col gap-10 max-w-7xl items-center justify-between md:flex-row md:items-start">
 
         {/* Left */}
         <div>
@@ -16,7 +16,7 @@ export default function Footer() {
         </div>
 
         {/* Right */}
-        <div className="space-y-3 text-right">
+        <div className="space-y-3 text-center md:text-right">
 
           <div>
             <p className="text-sm text-zinc-400">

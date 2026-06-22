@@ -6,8 +6,8 @@ import { topMenu } from '@/app/components/layout/top-menu/topmenu.data'
 export function TopMenu() {
 	return (
 		<>
-		<div className='flex  items-center justify-center  mx-5 mb-25'>
-    <nav className="flex gap-5 items-center">
+		<div className='mx-5 mb-8'>
+    <nav className="flex flex-wrap justify-center gap-3 overflow-x-auto px-2 py-2">
       {topMenu.map((menuItem) => (
         <Link 
           key={menuItem.title} 

@@ -4,7 +4,6 @@ export default function Footer() {
       
       <div className="mx-auto flex flex-col gap-10 max-w-7xl items-center justify-between md:flex-row md:items-start">
 
-        {/* Left */}
         <div>
           <h2 className="text-3xl font-bold">
             Palett Pro
@@ -15,7 +14,7 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Right */}
+
         <div className="space-y-3 text-center md:text-right">
 
           <div>
@@ -30,21 +29,24 @@ export default function Footer() {
 
           <div>
             <p className="text-sm text-zinc-400">
-              Телефон
+              Телефоны
             </p>
 
             <p className="text-l font-medium">
-              +7 777 777 77 77
+              +7 961 574-48-88
+            </p>
+            <p className="text-l font-medium">
+              +7 912 288-82-22
             </p>
           </div>
 
           <div>
             <p className="text-sm text-zinc-400">
-              ИНН
+              ИНН 
             </p>
 
             <p className="text-l font-medium">
-              1234567890
+              6685219095
             </p>
           </div>
 

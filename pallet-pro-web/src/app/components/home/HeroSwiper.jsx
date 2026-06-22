@@ -1,12 +1,13 @@
 "use client";
 
+import Image from "next/image"
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 
 const images = [
-  "https://placehold.co/1600x700",
-  "https://placehold.co/1600x700",
-  "https://placehold.co/1600x700",
+  "/test.jpg",
+  "/skolko-pallet-pomeshchaetsya-v-furu-minsk-belarus_1000x450_3d8.jpg",
+  "/main.jpg",
 ];
 
 export default function HeroSwiper() {
@@ -36,11 +37,14 @@ export default function HeroSwiper() {
               key={index}
               className="min-w-full"
             >
-              <img
-                src={image}
-                alt=""
-                className="h-[260px] w-full object-cover sm:h-[360px] md:h-[500px]"
-              />
+              <div className="relative min-w-full h-[260px] sm:h-[360px] md:h-[500px]">
+                <Image
+                  src={image}
+                  alt=""
+                  fill
+                  className="object-cover object-center"
+                />
+              </div>
             </div>
           ))}
         </div>

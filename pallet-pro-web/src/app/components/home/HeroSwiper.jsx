@@ -24,7 +24,7 @@ export default function HeroSwiper() {
   );
 
   return (
-    <div className="relative w-full container mx-auto">
+    <div className="relative w-full container mx-auto px-4">
 
       <div
         className="overflow-hidden rounded-3xl"
@@ -39,7 +39,7 @@ export default function HeroSwiper() {
               <img
                 src={image}
                 alt=""
-                className="h-[500px] w-full object-cover"
+                className="h-[260px] w-full object-cover sm:h-[360px] md:h-[500px]"
               />
             </div>
           ))}

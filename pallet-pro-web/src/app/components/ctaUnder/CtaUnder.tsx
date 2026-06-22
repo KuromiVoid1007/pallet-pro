@@ -7,7 +7,7 @@ export default function CtaUnder() {
 
   return (
     <section className="px-6 py-16">
-      <div className="mx-auto container bg-black rounded-3xl px-12 py-14 flex items-start justify-between gap-12">
+      <div className="mx-auto container bg-black rounded-3xl px-6 py-10 flex flex-col gap-10 md:flex-row md:items-start md:justify-between md:px-12 md:py-14">
 
         {/* Left */}
         <div className="flex-1">
@@ -29,7 +29,7 @@ export default function CtaUnder() {
         </div>
 
         {/* Right */}
-        <div className="flex flex-col gap-3 min-w-[280px]">
+        <div className="flex w-full flex-col gap-3 md:max-w-sm">
 
           {/* Тип */}
           <div>
@@ -52,7 +52,7 @@ export default function CtaUnder() {
           </div>
 
           {/* Размеры */}
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             {[
               { label: 'ДЛИНА (мм)', placeholder: '1200' },
               { label: 'ШИРИНА (мм)', placeholder: '1000' },

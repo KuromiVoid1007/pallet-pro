@@ -31,7 +31,7 @@ export function ProductCard({
   const isCustom = badge === 'custom'
 
   return (
-    <div className="flex flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white transition-colors">
+    <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white transition-colors">
       <div
         className={`bg-zinc-100 flex items-center justify-center ${
           wide ? 'aspect-[2/1]' : 'aspect-square'

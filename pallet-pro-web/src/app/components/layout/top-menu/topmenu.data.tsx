@@ -1,5 +1,5 @@
 import { PagesConfig } from '@/app/config/pages.config'
-import { Home, LucideIcon, ShoppingCart, Package, Repeat, Layers, Box } from 'lucide-react'
+import { Home, LucideIcon, Info, Package, Repeat, Layers, Box } from 'lucide-react'
 
 export interface TopMenuItem {
   title: string;
@@ -34,8 +34,8 @@ export const topMenu : TopMenuItem[] = [
     href: PagesConfig.MATERIAL,
   },
   {
-    title: 'Заказы',
-    icon: ShoppingCart,
-    href: PagesConfig.ORDERS,
+    title: 'О нас',
+    icon: Info,
+    href: PagesConfig.ABOUT,
   }
 ] as const

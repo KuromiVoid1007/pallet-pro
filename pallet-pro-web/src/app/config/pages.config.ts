@@ -4,5 +4,5 @@ export class PagesConfig {
   static readonly BOXES = '/boxes';
   static readonly USED_PALLETS = '/used-pallets';
   static readonly MATERIAL = '/material';
-  static readonly ORDERS = '/orders';
+  static readonly ABOUT = '/about';
 }

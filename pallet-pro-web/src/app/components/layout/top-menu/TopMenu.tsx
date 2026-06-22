@@ -12,8 +12,10 @@ export function TopMenu() {
         <Link 
           key={menuItem.title} 
           href={menuItem.href}
-          className={cn('flex gap-1 items-center transition-opacity hover:opacity-100 opacity-50 font-medium text-sm',
-            topMenu.indexOf(menuItem) == 0 && 'opacity-100 text-teal-600')}
+          className={cn(
+            'flex gap-1 items-center transition-opacity hover:opacity-100 opacity-50 font-medium text-sm',
+            topMenu.indexOf(menuItem) === 0 && 'opacity-100 text-teal-600'
+          )}
         >
           {menuItem.icon && (
             <menuItem.icon 

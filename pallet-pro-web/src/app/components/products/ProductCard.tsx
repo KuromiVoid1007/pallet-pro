@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-
+import Image from 'next/image'
 type BadgeType = 'new' | 'used' | 'custom'
 
 const badgeConfig: Record<BadgeType, { label: string; className: string }> = {
@@ -33,15 +33,16 @@ export function ProductCard({
   return (
     <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white transition-colors">
       <div
-        className={`bg-zinc-100 flex items-center justify-center ${
+        className={`bg-zinc-100 flex items-center relative overflow-hidden justify-center ${
           wide ? 'aspect-[2/1]' : 'aspect-square'
         }`}
       >
         {image ? (
-          <img
+          <Image
             src={image}
             alt={title}
             className="h-full w-full object-cover"
+            fill
           />
         ) : (
           <span className="text-4xl text-zinc-300">📦</span>
